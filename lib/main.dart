@@ -36,10 +36,11 @@ class BytebankApp extends StatelessWidget {
                         Icon(
                           Icons.people,
                           color: Colors.white,
+                          size: 24.0,
                         ),
                         Text(
                           'Contacts',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white, fontSize: 16.0),
                         ),
                       ]),
                 ),
