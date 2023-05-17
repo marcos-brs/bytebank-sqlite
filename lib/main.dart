@@ -33,8 +33,14 @@ class BytebankApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.people),
-                        Text('Contacts'),
+                        Icon(
+                          Icons.people,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          'Contacts',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ]),
                 ),
               )
