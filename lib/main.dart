@@ -10,6 +10,14 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          primaryColor: Colors.green[900],
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.blueAccent[700],
+            textTheme: ButtonTextTheme.primary,
+          ),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(secondary: Colors.blueAccent[700])),
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Dashboard'),
@@ -28,7 +36,7 @@ class BytebankApp extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   height: 100,
                   width: 150,
-                  color: Colors.green,
+                  color: Theme.of(context).primaryColor,
                   child: const Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
