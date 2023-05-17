@@ -6,13 +6,22 @@ class ContactList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Contacts')),
+      appBar: AppBar(
+        title: const Text('Contacts'),
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: ListView(
         children: const [
           Card(
             child: ListTile(
-              title: Text('Marcos'),
-              subtitle: Text('1000'),
+              title: Text(
+                'Marcos',
+                style: TextStyle(fontSize: 24.0),
+              ),
+              subtitle: Text(
+                '1000',
+                style: TextStyle(fontSize: 16.0),
+              ),
             ),
           )
         ],
