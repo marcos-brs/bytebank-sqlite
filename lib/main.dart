@@ -15,6 +15,8 @@ class BytebankApp extends StatelessWidget {
             title: const Text('Dashboard'),
           ),
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
