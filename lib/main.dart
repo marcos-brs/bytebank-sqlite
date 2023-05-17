@@ -1,4 +1,4 @@
-import 'package:bytebank_armazenamento/screen/contacts_list.dart';
+import 'package:bytebank_armazenamento/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class BytebankApp extends StatelessWidget {
           ),
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: Colors.blueAccent[700])),
-      home: const ContactList(),
+      home: const Dashboard(),
     );
   }
 }
