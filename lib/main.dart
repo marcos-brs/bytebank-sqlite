@@ -25,13 +25,17 @@ class BytebankApp extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
+                  padding: const EdgeInsets.all(8.0),
                   height: 100,
                   width: 150,
                   color: Colors.green,
-                  child: const Column(children: [
-                    Icon(Icons.people),
-                    Text('Contacts'),
-                  ]),
+                  child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.people),
+                        Text('Contacts'),
+                      ]),
                 ),
               )
             ],
