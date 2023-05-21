@@ -27,8 +27,8 @@ class Dashboard extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ContactList()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ContactList()));
                   },
                   child: Container(
                     padding: const EdgeInsets.all(8.0),

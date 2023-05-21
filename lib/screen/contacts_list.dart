@@ -1,27 +1,45 @@
+import 'package:bytebank_armazenamento/database/app_database.dart';
 import 'package:flutter/material.dart';
 
 import '../models/contact.dart';
 import 'contact_form.dart';
 
 class ContactList extends StatelessWidget {
-  ContactList({super.key});
-
-  final List<Contact> contacts = List.empty(growable: true);
+  const ContactList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    contacts.add(Contact(0, "Marcos", 1000));
     return Scaffold(
         appBar: AppBar(
           title: const Text('Contacts'),
           backgroundColor: Theme.of(context).primaryColor,
         ),
-        body: ListView.builder(
-          itemBuilder: (context, index) {
-            final Contact contact = contacts[index];
-            return _ContactItem(contact);
+        body: FutureBuilder<List<Contact>>(
+          future: findAll(),
+          initialData: const [],
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              final List<Contact> contacts =
+                  snapshot.hasData ? snapshot.data as List<Contact> : [];
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  final Contact contact = contacts[index];
+                  return _ContactItem(contact);
+                },
+                itemCount: contacts.length,
+              );
+            }
+            return const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  Text('Loading'),
+                ],
+              ),
+            );
           },
-          itemCount: contacts.length,
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
