@@ -1,3 +1,3 @@
 # bytebank_armazenamento
 
-A new Flutter project.
+Um projeto simples que mostra uma implementação de SQLite com Flutter
