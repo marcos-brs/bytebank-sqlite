@@ -1,11 +1,13 @@
-import 'package:bytebank_armazenamento/database/app_database.dart';
 import 'package:flutter/material.dart';
 
+import '../dao/contact_dao.dart';
 import '../models/contact.dart';
 import 'contact_form.dart';
 
 class ContactList extends StatelessWidget {
-  const ContactList({super.key});
+  ContactList({super.key});
+
+  final ContactDao _contactDao = ContactDao();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class ContactList extends StatelessWidget {
           backgroundColor: Theme.of(context).primaryColor,
         ),
         body: FutureBuilder<List<Contact>>(
-          future: findAll(),
+          future: _contactDao.findAll(),
           initialData: const [],
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
